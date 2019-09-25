@@ -2,7 +2,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import Routes from './routes.js';
+import Routes from './Routes.js';
 import App from './views/App';
 
 import Vue from 'vue'
