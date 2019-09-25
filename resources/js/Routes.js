@@ -13,10 +13,16 @@ const router = new VueRouter({
     		import("./views/Home.vue")
 		},
 		{
-			path:'/list',
+			path:'/:entity',
 			name:'list',
 			component:() =>
     		import("./views/List.vue")
+		},
+		{
+			path:'/:entity/edit/:id?',
+			name:'edit',
+			component:() =>
+    		import("./views/Edit.vue")
 		}
 	]
 })

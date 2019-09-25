@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -36,7 +37,11 @@ var render = function() {
   return _c(
     "b-jumbotron",
     { staticClass: "mt-5", attrs: { align: "center" } },
-    [_c("H1", [_vm._v("Laravel Base Client")])],
+    [
+      _c("H1", [_vm._v("Laravel Base Client")]),
+      _vm._v(" "),
+      _c("short", [_vm._v("b-row>b-col>p{Welcome to your client App!")])
+    ],
     1
   )
 }

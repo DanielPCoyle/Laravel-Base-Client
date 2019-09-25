@@ -197,7 +197,7 @@
     <!--RADIO INPUT-->
     <template v-if='item.type == "radio"'>
       <b-form-radio-group :id="'radio-group-'+item.key" stacked v-model="values[item.key]">
-        <b-form-radio v-for='option in item.options' :value="option.value">{{option.text}}</b-form-radio>
+        <b-form-radio v-for='option in item.options' :value="option.value" :key='item.key'>{{option.text}}</b-form-radio>
       </b-form-radio-group>
     </template>
 
@@ -318,7 +318,7 @@ allowfullscreen>
     import { VueEditor } from "vue2-editor";
 
     export default {
-        name: "fields",
+        name: "base-fields",
         props:['fields','values'],
         components: {
             VueEditor
