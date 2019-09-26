@@ -1,5 +1,6 @@
 <template>
 	<b-container v-if='access'>
+		<navigation></navigation>
 		<router-view></router-view>
 	</b-container>
 	<b-container v-else align='center'>
@@ -8,12 +9,14 @@
 	</b-container>
 </template>
 <script>
+	import Navigation from "../components/Navigation.vue";
 	export default {
 		data(){
 			return {
 			access :false
 			}
 		},
+		components:{Navigation},
 		mounted(){
 			if(!ACCESS_TOKEN){
 				setTimeout(function(){

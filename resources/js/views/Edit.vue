@@ -2,6 +2,9 @@
 	<div>
 		<base-fields :fields="fields"  :values="values"></base-fields>
 		<b-button @click='submitAction'>Submit</b-button>
+		<div>
+		{{infoLink}}
+		</div>
 	</div>
 </template>
 <script>
@@ -39,7 +42,19 @@
 			    })
 			},
 			submitAction(){
-
+				var comp = this;
+				comp.axios.post(comp.infoLink.replace("undefined",""),comp.values).then((response) =>{
+					if(!comp.id){
+						comp.id = response.data.data.id;
+						comp.infoLink = comp.infoLink.replace("undefined",comp.id);
+						comp.$router.push({name: 'edit', 
+							params:{
+								entity: comp.$route.params.entity,
+								id:comp.id
+							} 
+						})
+					}
+				});
 			}
 		},
 		mounted(){

@@ -29,13 +29,11 @@
 			text = text.split(/\n/g);
 			$.each(text,(i,x) => {
 				if(x.trim().length > 0){
-					var out = x.trim().replace(/>\+/g,">")
-					console.log(out)
-					result.push(expand(out));
+					result.push(expand(x.trim()));
+					
 				}
 			})
-			console.log(result)
-			comp.template = "<div>"+result.join("\n")+"</div>"
+			comp.template = "<div>"+result.join("\n").replace(/\}/g,"\n")+"</div>"
 		},
 		components: {
 			VRuntimeTemplate

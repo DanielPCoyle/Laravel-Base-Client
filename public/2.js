@@ -15,6 +15,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -35,12 +47,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "b-jumbotron",
-    { staticClass: "mt-5", attrs: { align: "center" } },
+    "div",
     [
-      _c("H1", [_vm._v("Laravel Base Client")]),
+      _c(
+        "b-jumbotron",
+        { staticClass: "mt-5", attrs: { align: "center" } },
+        [_c("H1", [_vm._v("Laravel Base Client")])],
+        1
+      ),
       _vm._v(" "),
-      _c("short", [_vm._v("b-row>b-col>p{Welcome to your client App!")])
+      _c("short", { attrs: { props: {} } }, [
+        _vm._v(
+          '\n\t\tb-row>b-col>h1{Welcome to your client App!}\n\n\t\tb-row>b-col>p{This application is designed to be used with Dan Coyle\'s Laravel-Base-API Application. }\n\n\t\tb-row>b-col>h2{Access}+p{Access is handled via OAuth2 }+p{Go to "/clients" in your base application to create a client access token.}\n\n\t\tb-row>b-col>h2{Features}+b-row>(b-col>h4{Data Management}+ul>li{Add Entity Records}+li{Edit Entity Records}+li{List Entity Records}+li{Filter Entity Records}+li{Delete Entity Records})+(b-col>h4{Vue Features}+ul>li{Dynamic Form Fields}+li{Dynamic Lists and Filtering}+li{Short hand Emmet Rendering})\n\n\t\tb-alert[variant=\'info\'][show=true]{To edit this page go to "/resources/js/views/Home.vue" in your project}\n\t'
+        )
+      ])
     ],
     1
   )

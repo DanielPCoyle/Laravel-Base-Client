@@ -424,6 +424,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -463,7 +466,22 @@ __webpack_require__.r(__webpack_exports__);
         comp.values = response.data.data;
       });
     },
-    submitAction: function submitAction() {}
+    submitAction: function submitAction() {
+      var comp = this;
+      comp.axios.post(comp.infoLink.replace("undefined", ""), comp.values).then(function (response) {
+        if (!comp.id) {
+          comp.id = response.data.data.id;
+          comp.infoLink = comp.infoLink.replace("undefined", comp.id);
+          comp.$router.push({
+            name: 'edit',
+            params: {
+              entity: comp.$route.params.entity,
+              id: comp.id
+            }
+          });
+        }
+      });
+    }
   },
   mounted: function mounted() {
     this.getFieldMeta();
@@ -1307,7 +1325,9 @@ var render = function() {
     [
       _c("base-fields", { attrs: { fields: _vm.fields, values: _vm.values } }),
       _vm._v(" "),
-      _c("b-button", { on: { click: _vm.submitAction } }, [_vm._v("Submit")])
+      _c("b-button", { on: { click: _vm.submitAction } }, [_vm._v("Submit")]),
+      _vm._v(" "),
+      _c("div", [_vm._v("\n\t" + _vm._s(_vm.infoLink) + "\n\t")])
     ],
     1
   )
